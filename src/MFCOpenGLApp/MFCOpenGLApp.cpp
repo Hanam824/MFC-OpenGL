@@ -9,38 +9,38 @@
 // Copyright (C) Microsoft Corporation
 // All rights reserved.
 
-// MFCApplication.cpp : Defines the class behaviors for the application.
+// MFCOpenGLApp.cpp : Defines the class behaviors for the application.
 //
 
 #include "pch.h"
 #include "framework.h"
 #include "afxwinappex.h"
 #include "afxdialogex.h"
-#include "MFCApplication.h"
+#include "MFCOpenGLApp.h"
 #include "MainFrm.h"
 
 #include "ChildFrm.h"
-#include "MFCApplicationDoc.h"
-#include "MFCApplicationView.h"
+#include "MFCOpenGLAppDoc.h"
+#include "MFCOpenGLAppView.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
 
 
-// CMFCApplicationApp
+// CMFCOpenGLAppApp
 
-BEGIN_MESSAGE_MAP(CMFCApplicationApp, CWinAppEx)
-	ON_COMMAND(ID_APP_ABOUT, &CMFCApplicationApp::OnAppAbout)
+BEGIN_MESSAGE_MAP(CMFCOpenGLAppApp, CWinAppEx)
+	ON_COMMAND(ID_APP_ABOUT, &CMFCOpenGLAppApp::OnAppAbout)
 	// Standard file based document commands
 	ON_COMMAND(ID_FILE_NEW, &CWinAppEx::OnFileNew)
 	ON_COMMAND(ID_FILE_OPEN, &CWinAppEx::OnFileOpen)
 END_MESSAGE_MAP()
 
 
-// CMFCApplicationApp construction
+// CMFCOpenGLAppApp construction
 
-CMFCApplicationApp::CMFCApplicationApp() noexcept
+CMFCOpenGLAppApp::CMFCOpenGLAppApp() noexcept
 {
 	m_bHiColorIcons = TRUE;
 
@@ -57,20 +57,20 @@ CMFCApplicationApp::CMFCApplicationApp() noexcept
 
 	// TODO: replace application ID string below with unique ID string; recommended
 	// format for string is CompanyName.ProductName.SubProduct.VersionInformation
-	SetAppID(_T("MFCApplication.AppID.NoVersion"));
+	SetAppID(_T("MFCOpenGLApp.AppID.NoVersion"));
 
 	// TODO: add construction code here,
 	// Place all significant initialization in InitInstance
 }
 
-// The one and only CMFCApplicationApp object
+// The one and only CMFCOpenGLAppApp object
 
-CMFCApplicationApp theApp;
+CMFCOpenGLAppApp theApp;
 
 
-// CMFCApplicationApp initialization
+// CMFCOpenGLAppApp initialization
 
-BOOL CMFCApplicationApp::InitInstance()
+BOOL CMFCOpenGLAppApp::InitInstance()
 {
 	// InitCommonControlsEx() is required on Windows XP if an application
 	// manifest specifies use of ComCtl32.dll version 6 or later to enable
@@ -122,10 +122,10 @@ BOOL CMFCApplicationApp::InitInstance()
 	// Register the application's document templates.  Document templates
 	//  serve as the connection between documents, frame windows and views
 	CMultiDocTemplate* pDocTemplate;
-	pDocTemplate = new CMultiDocTemplate(IDR_MFCApplicationTYPE,
-		RUNTIME_CLASS(CMFCApplicationDoc),
+	pDocTemplate = new CMultiDocTemplate(IDR_MFCOpenGLAppTYPE,
+		RUNTIME_CLASS(CMFCOpenGLAppDoc),
 		RUNTIME_CLASS(CChildFrame), // custom MDI child frame
-		RUNTIME_CLASS(CMFCApplicationView));
+		RUNTIME_CLASS(CMFCOpenGLAppView));
 	if (!pDocTemplate)
 		return FALSE;
 	AddDocTemplate(pDocTemplate);
@@ -164,7 +164,7 @@ BOOL CMFCApplicationApp::InitInstance()
 	return TRUE;
 }
 
-int CMFCApplicationApp::ExitInstance()
+int CMFCOpenGLAppApp::ExitInstance()
 {
 	//TODO: handle additional resources you may have added
 	AfxOleTerm(FALSE);
@@ -172,7 +172,7 @@ int CMFCApplicationApp::ExitInstance()
 	return CWinAppEx::ExitInstance();
 }
 
-// CMFCApplicationApp message handlers
+// CMFCOpenGLAppApp message handlers
 
 
 // CAboutDlg dialog used for App About
@@ -208,15 +208,15 @@ BEGIN_MESSAGE_MAP(CAboutDlg, CDialogEx)
 END_MESSAGE_MAP()
 
 // App command to run the dialog
-void CMFCApplicationApp::OnAppAbout()
+void CMFCOpenGLAppApp::OnAppAbout()
 {
 	CAboutDlg aboutDlg;
 	aboutDlg.DoModal();
 }
 
-// CMFCApplicationApp customization load/save methods
+// CMFCOpenGLAppApp customization load/save methods
 
-void CMFCApplicationApp::PreLoadState()
+void CMFCOpenGLAppApp::PreLoadState()
 {
 	BOOL bNameValid;
 	CString strName;
@@ -228,15 +228,15 @@ void CMFCApplicationApp::PreLoadState()
 	GetContextMenuManager()->AddMenu(strName, IDR_POPUP_EXPLORER);
 }
 
-void CMFCApplicationApp::LoadCustomState()
+void CMFCOpenGLAppApp::LoadCustomState()
 {
 }
 
-void CMFCApplicationApp::SaveCustomState()
+void CMFCOpenGLAppApp::SaveCustomState()
 {
 }
 
-// CMFCApplicationApp message handlers
+// CMFCOpenGLAppApp message handlers
 
 
 

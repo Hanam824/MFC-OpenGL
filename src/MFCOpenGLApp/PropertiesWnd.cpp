@@ -15,7 +15,7 @@
 #include "PropertiesWnd.h"
 #include "Resource.h"
 #include "MainFrm.h"
-#include "MFCApplication.h"
+#include "MFCOpenGLApp.h"
 
 #ifdef _DEBUG
 #undef THIS_FILE

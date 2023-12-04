@@ -9,18 +9,18 @@
 // Copyright (C) Microsoft Corporation
 // All rights reserved.
 
-// MFCApplicationDoc.h : interface of the CMFCApplicationDoc class
+// MFCOpenGLAppDoc.h : interface of the CMFCOpenGLAppDoc class
 //
 
 
 #pragma once
 
 
-class CMFCApplicationDoc : public CDocument
+class CMFCOpenGLAppDoc : public CDocument
 {
 protected: // create from serialization only
-	CMFCApplicationDoc() noexcept;
-	DECLARE_DYNCREATE(CMFCApplicationDoc)
+	CMFCOpenGLAppDoc() noexcept;
+	DECLARE_DYNCREATE(CMFCOpenGLAppDoc)
 
 // Attributes
 public:
@@ -39,7 +39,7 @@ public:
 
 // Implementation
 public:
-	virtual ~CMFCApplicationDoc();
+	virtual ~CMFCOpenGLAppDoc();
 #ifdef _DEBUG
 	virtual void AssertValid() const;
 	virtual void Dump(CDumpContext& dc) const;

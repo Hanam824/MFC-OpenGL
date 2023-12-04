@@ -199,9 +199,9 @@
     <ClInclude Include="FileView.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="MainFrm.h" />
-    <ClInclude Include="MFCApplication.h" />
-    <ClInclude Include="MFCApplicationDoc.h" />
-    <ClInclude Include="MFCApplicationView.h" />
+    <ClInclude Include="MFCOpenGLApp.h" />
+    <ClInclude Include="MFCOpenGLAppDoc.h" />
+    <ClInclude Include="MFCOpenGLAppView.h" />
     <ClInclude Include="OutputWnd.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="PropertiesWnd.h" />
@@ -215,9 +215,9 @@
     <ClCompile Include="ClassView.cpp" />
     <ClCompile Include="FileView.cpp" />
     <ClCompile Include="MainFrm.cpp" />
-    <ClCompile Include="MFCApplication.cpp" />
-    <ClCompile Include="MFCApplicationDoc.cpp" />
-    <ClCompile Include="MFCApplicationView.cpp" />
+    <ClCompile Include="MFCOpenGLApp.cpp" />
+    <ClCompile Include="MFCOpenGLAppDoc.cpp" />
+    <ClCompile Include="MFCOpenGLAppView.cpp" />
     <ClCompile Include="OutputWnd.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -229,12 +229,12 @@
     <ClCompile Include="ViewTree.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="MFCApplication.reg" />
-    <None Include="res\MFCApplication.rc2" />
+    <None Include="MFCOpenGLApp.reg" />
+    <None Include="res\MFCOpenGLApp.rc2" />
     <None Include="res\ribbon.mfcribbon-ms" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="MFCApplication.rc" />
+    <ResourceCompile Include="MFCOpenGLApp.rc" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="res\buttons.bmp" />
@@ -254,8 +254,8 @@
     <Image Include="res\main.bmp" />
     <Image Include="res\menuimages.bmp" />
     <Image Include="res\menuimages_hc.bmp" />
-    <Image Include="res\MFCApplication.ico" />
-    <Image Include="res\MFCApplicationDoc.ico" />
+    <Image Include="res\MFCOpenGLApp.ico" />
+    <Image Include="res\MFCOpenGLAppDoc.ico" />
     <Image Include="res\nav_large.bmp" />
     <Image Include="res\nav_large_hc.bmp" />
     <Image Include="res\output_wnd.ico" />

@@ -9,7 +9,7 @@
 // Copyright (C) Microsoft Corporation
 // All rights reserved.
 
-// MFCApplication.h : main header file for the MFCApplication application
+// MFCOpenGLApp.h : main header file for the MFCOpenGLApp application
 //
 #pragma once
 
@@ -20,14 +20,14 @@
 #include "resource.h"       // main symbols
 
 
-// CMFCApplicationApp:
-// See MFCApplication.cpp for the implementation of this class
+// CMFCOpenGLAppApp:
+// See MFCOpenGLApp.cpp for the implementation of this class
 //
 
-class CMFCApplicationApp : public CWinAppEx
+class CMFCOpenGLAppApp : public CWinAppEx
 {
 public:
-	CMFCApplicationApp() noexcept;
+	CMFCOpenGLAppApp() noexcept;
 
 
 // Overrides
@@ -47,4 +47,4 @@ public:
 	DECLARE_MESSAGE_MAP()
 };
 
-extern CMFCApplicationApp theApp;
+extern CMFCOpenGLAppApp theApp;

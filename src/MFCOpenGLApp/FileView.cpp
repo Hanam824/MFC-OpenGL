@@ -14,7 +14,7 @@
 #include "mainfrm.h"
 #include "FileView.h"
 #include "Resource.h"
-#include "MFCApplication.h"
+#include "MFCOpenGLApp.h"
 
 #ifdef _DEBUG
 #undef THIS_FILE

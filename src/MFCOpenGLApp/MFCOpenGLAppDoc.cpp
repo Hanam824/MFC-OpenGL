@@ -9,7 +9,7 @@
 // Copyright (C) Microsoft Corporation
 // All rights reserved.
 
-// MFCApplicationDoc.cpp : implementation of the CMFCApplicationDoc class
+// MFCOpenGLAppDoc.cpp : implementation of the CMFCOpenGLAppDoc class
 //
 
 #include "pch.h"
@@ -17,10 +17,10 @@
 // SHARED_HANDLERS can be defined in an ATL project implementing preview, thumbnail
 // and search filter handlers and allows sharing of document code with that project.
 #ifndef SHARED_HANDLERS
-#include "MFCApplication.h"
+#include "MFCOpenGLApp.h"
 #endif
 
-#include "MFCApplicationDoc.h"
+#include "MFCOpenGLAppDoc.h"
 
 #include <propkey.h>
 
@@ -28,27 +28,27 @@
 #define new DEBUG_NEW
 #endif
 
-// CMFCApplicationDoc
+// CMFCOpenGLAppDoc
 
-IMPLEMENT_DYNCREATE(CMFCApplicationDoc, CDocument)
+IMPLEMENT_DYNCREATE(CMFCOpenGLAppDoc, CDocument)
 
-BEGIN_MESSAGE_MAP(CMFCApplicationDoc, CDocument)
+BEGIN_MESSAGE_MAP(CMFCOpenGLAppDoc, CDocument)
 END_MESSAGE_MAP()
 
 
-// CMFCApplicationDoc construction/destruction
+// CMFCOpenGLAppDoc construction/destruction
 
-CMFCApplicationDoc::CMFCApplicationDoc() noexcept
+CMFCOpenGLAppDoc::CMFCOpenGLAppDoc() noexcept
 {
 	// TODO: add one-time construction code here
 
 }
 
-CMFCApplicationDoc::~CMFCApplicationDoc()
+CMFCOpenGLAppDoc::~CMFCOpenGLAppDoc()
 {
 }
 
-BOOL CMFCApplicationDoc::OnNewDocument()
+BOOL CMFCOpenGLAppDoc::OnNewDocument()
 {
 	if (!CDocument::OnNewDocument())
 		return FALSE;
@@ -62,9 +62,9 @@ BOOL CMFCApplicationDoc::OnNewDocument()
 
 
 
-// CMFCApplicationDoc serialization
+// CMFCOpenGLAppDoc serialization
 
-void CMFCApplicationDoc::Serialize(CArchive& ar)
+void CMFCOpenGLAppDoc::Serialize(CArchive& ar)
 {
 	if (ar.IsStoring())
 	{
@@ -79,7 +79,7 @@ void CMFCApplicationDoc::Serialize(CArchive& ar)
 #ifdef SHARED_HANDLERS
 
 // Support for thumbnails
-void CMFCApplicationDoc::OnDrawThumbnail(CDC& dc, LPRECT lprcBounds)
+void CMFCOpenGLAppDoc::OnDrawThumbnail(CDC& dc, LPRECT lprcBounds)
 {
 	// Modify this code to draw the document's data
 	dc.FillSolidRect(lprcBounds, RGB(255, 255, 255));
@@ -100,7 +100,7 @@ void CMFCApplicationDoc::OnDrawThumbnail(CDC& dc, LPRECT lprcBounds)
 }
 
 // Support for Search Handlers
-void CMFCApplicationDoc::InitializeSearchContent()
+void CMFCOpenGLAppDoc::InitializeSearchContent()
 {
 	CString strSearchContent;
 	// Set search contents from document's data.
@@ -110,7 +110,7 @@ void CMFCApplicationDoc::InitializeSearchContent()
 	SetSearchContent(strSearchContent);
 }
 
-void CMFCApplicationDoc::SetSearchContent(const CString& value)
+void CMFCOpenGLAppDoc::SetSearchContent(const CString& value)
 {
 	if (value.IsEmpty())
 	{
@@ -130,19 +130,19 @@ void CMFCApplicationDoc::SetSearchContent(const CString& value)
 
 #endif // SHARED_HANDLERS
 
-// CMFCApplicationDoc diagnostics
+// CMFCOpenGLAppDoc diagnostics
 
 #ifdef _DEBUG
-void CMFCApplicationDoc::AssertValid() const
+void CMFCOpenGLAppDoc::AssertValid() const
 {
 	CDocument::AssertValid();
 }
 
-void CMFCApplicationDoc::Dump(CDumpContext& dc) const
+void CMFCOpenGLAppDoc::Dump(CDumpContext& dc) const
 {
 	CDocument::Dump(dc);
 }
 #endif //_DEBUG
 
 
-// CMFCApplicationDoc commands
+// CMFCOpenGLAppDoc commands

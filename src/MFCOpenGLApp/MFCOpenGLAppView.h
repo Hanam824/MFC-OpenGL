@@ -9,21 +9,21 @@
 // Copyright (C) Microsoft Corporation
 // All rights reserved.
 
-// MFCApplicationView.h : interface of the CMFCApplicationView class
+// MFCOpenGLAppView.h : interface of the CMFCOpenGLAppView class
 //
 
 #pragma once
 
 
-class CMFCApplicationView : public CView
+class CMFCOpenGLAppView : public CView
 {
 protected: // create from serialization only
-	CMFCApplicationView() noexcept;
-	DECLARE_DYNCREATE(CMFCApplicationView)
+	CMFCOpenGLAppView() noexcept;
+	DECLARE_DYNCREATE(CMFCOpenGLAppView)
 
 // Attributes
 public:
-	CMFCApplicationDoc* GetDocument() const;
+	CMFCOpenGLAppDoc* GetDocument() const;
 
 // Operations
 public:
@@ -36,7 +36,7 @@ protected:
 
 // Implementation
 public:
-	virtual ~CMFCApplicationView();
+	virtual ~CMFCOpenGLAppView();
 #ifdef _DEBUG
 	virtual void AssertValid() const;
 	virtual void Dump(CDumpContext& dc) const;
@@ -52,8 +52,8 @@ protected:
 	DECLARE_MESSAGE_MAP()
 };
 
-#ifndef _DEBUG  // debug version in MFCApplicationView.cpp
-inline CMFCApplicationDoc* CMFCApplicationView::GetDocument() const
-   { return reinterpret_cast<CMFCApplicationDoc*>(m_pDocument); }
+#ifndef _DEBUG  // debug version in MFCOpenGLAppView.cpp
+inline CMFCOpenGLAppDoc* CMFCOpenGLAppView::GetDocument() const
+   { return reinterpret_cast<CMFCOpenGLAppDoc*>(m_pDocument); }
 #endif
 

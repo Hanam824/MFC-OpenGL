@@ -9,7 +9,7 @@
 // Copyright (C) Microsoft Corporation
 // All rights reserved.
 
-// MFCApplicationView.cpp : implementation of the CMFCApplicationView class
+// MFCOpenGLAppView.cpp : implementation of the MFCOpenGLAppView class
 //
 
 #include "pch.h"
@@ -17,39 +17,39 @@
 // SHARED_HANDLERS can be defined in an ATL project implementing preview, thumbnail
 // and search filter handlers and allows sharing of document code with that project.
 #ifndef SHARED_HANDLERS
-#include "MFCApplication.h"
+#include "MFCOpenGLApp.h"
 #endif
 
-#include "MFCApplicationDoc.h"
-#include "MFCApplicationView.h"
+#include "MFCOpenGLAppDoc.h"
+#include "MFCOpenGLAppView.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
 
 
-// CMFCApplicationView
+// CMFCOpenGLAppView
 
-IMPLEMENT_DYNCREATE(CMFCApplicationView, CView)
+IMPLEMENT_DYNCREATE(CMFCOpenGLAppView, CView)
 
-BEGIN_MESSAGE_MAP(CMFCApplicationView, CView)
+BEGIN_MESSAGE_MAP(CMFCOpenGLAppView, CView)
 	ON_WM_CONTEXTMENU()
 	ON_WM_RBUTTONUP()
 END_MESSAGE_MAP()
 
-// CMFCApplicationView construction/destruction
+// CMFCOpenGLAppView construction/destruction
 
-CMFCApplicationView::CMFCApplicationView() noexcept
+CMFCOpenGLAppView::CMFCOpenGLAppView() noexcept
 {
 	// TODO: add construction code here
 
 }
 
-CMFCApplicationView::~CMFCApplicationView()
+CMFCOpenGLAppView::~CMFCOpenGLAppView()
 {
 }
 
-BOOL CMFCApplicationView::PreCreateWindow(CREATESTRUCT& cs)
+BOOL CMFCOpenGLAppView::PreCreateWindow(CREATESTRUCT& cs)
 {
 	// TODO: Modify the Window class or styles here by modifying
 	//  the CREATESTRUCT cs
@@ -57,11 +57,11 @@ BOOL CMFCApplicationView::PreCreateWindow(CREATESTRUCT& cs)
 	return CView::PreCreateWindow(cs);
 }
 
-// CMFCApplicationView drawing
+// CMFCOpenGLAppView drawing
 
-void CMFCApplicationView::OnDraw(CDC* /*pDC*/)
+void CMFCOpenGLAppView::OnDraw(CDC* /*pDC*/)
 {
-	CMFCApplicationDoc* pDoc = GetDocument();
+	CMFCOpenGLAppDoc* pDoc = GetDocument();
 	ASSERT_VALID(pDoc);
 	if (!pDoc)
 		return;
@@ -69,13 +69,13 @@ void CMFCApplicationView::OnDraw(CDC* /*pDC*/)
 	// TODO: add draw code for native data here
 }
 
-void CMFCApplicationView::OnRButtonUp(UINT /* nFlags */, CPoint point)
+void CMFCOpenGLAppView::OnRButtonUp(UINT /* nFlags */, CPoint point)
 {
 	ClientToScreen(&point);
 	OnContextMenu(this, point);
 }
 
-void CMFCApplicationView::OnContextMenu(CWnd* /* pWnd */, CPoint point)
+void CMFCOpenGLAppView::OnContextMenu(CWnd* /* pWnd */, CPoint point)
 {
 #ifndef SHARED_HANDLERS
 	theApp.GetContextMenuManager()->ShowPopupMenu(IDR_POPUP_EDIT, point.x, point.y, this, TRUE);
@@ -83,25 +83,25 @@ void CMFCApplicationView::OnContextMenu(CWnd* /* pWnd */, CPoint point)
 }
 
 
-// CMFCApplicationView diagnostics
+// CMFCOpenGLAppView diagnostics
 
 #ifdef _DEBUG
-void CMFCApplicationView::AssertValid() const
+void CMFCOpenGLAppView::AssertValid() const
 {
 	CView::AssertValid();
 }
 
-void CMFCApplicationView::Dump(CDumpContext& dc) const
+void CMFCOpenGLAppView::Dump(CDumpContext& dc) const
 {
 	CView::Dump(dc);
 }
 
-CMFCApplicationDoc* CMFCApplicationView::GetDocument() const // non-debug version is inline
+CMFCOpenGLAppDoc* CMFCOpenGLAppView::GetDocument() const // non-debug version is inline
 {
-	ASSERT(m_pDocument->IsKindOf(RUNTIME_CLASS(CMFCApplicationDoc)));
-	return (CMFCApplicationDoc*)m_pDocument;
+	ASSERT(m_pDocument->IsKindOf(RUNTIME_CLASS(CMFCOpenGLAppDoc)));
+	return (CMFCOpenGLAppDoc*)m_pDocument;
 }
 #endif //_DEBUG
 
 
-// CMFCApplicationView message handlers
+// CMFCOpenGLAppView message handlers

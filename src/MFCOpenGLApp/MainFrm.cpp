@@ -14,7 +14,7 @@
 
 #include "pch.h"
 #include "framework.h"
-#include "MFCApplication.h"
+#include "MFCOpenGLApp.h"
 
 #include "MainFrm.h"
 

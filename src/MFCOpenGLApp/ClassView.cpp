@@ -14,7 +14,7 @@
 #include "MainFrm.h"
 #include "ClassView.h"
 #include "Resource.h"
-#include "MFCApplication.h"
+#include "MFCOpenGLApp.h"
 
 class CClassViewMenuButton : public CMFCToolBarMenuButton
 {

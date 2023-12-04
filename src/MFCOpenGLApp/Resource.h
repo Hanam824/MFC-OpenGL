@@ -1,6 +1,6 @@
 //{{NO_DEPENDENCIES}}
 // Microsoft Visual C++ generated include file.
-// Used by MFCApplication.rc
+// Used by MFCOpenGLApp.rc
 //
 #define IDR_PASTE_MENU				151
 #define IDR_WINDOWS_MENU			152
@@ -20,7 +20,7 @@
 #define IDS_STATUS_PANE2			123
 #define IDR_MAINFRAME				128
 #define IDR_MAINFRAME_256			129
-#define IDR_MFCApplicationTYPE				130
+#define IDR_MFCOpenGLAppTYPE				130
 #define ID_WINDOW_MANAGER			131
 #define ID_VIEW_FILEVIEW			133
 #define ID_VIEW_CLASSVIEW			134

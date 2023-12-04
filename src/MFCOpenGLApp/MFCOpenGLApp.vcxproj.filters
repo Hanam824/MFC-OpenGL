@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="MFCApplication.h">
+    <ClInclude Include="MFCOpenGLApp.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="framework.h">
@@ -30,10 +30,10 @@
     <ClInclude Include="ChildFrm.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MFCApplicationDoc.h">
+    <ClInclude Include="MFCOpenGLAppDoc.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MFCApplicationView.h">
+    <ClInclude Include="MFCOpenGLAppView.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Resource.h">
@@ -62,7 +62,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="MFCApplication.cpp">
+    <ClCompile Include="MFCOpenGLApp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MainFrm.cpp">
@@ -71,10 +71,10 @@
     <ClCompile Include="ChildFrm.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MFCApplicationDoc.cpp">
+    <ClCompile Include="MFCOpenGLAppDoc.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MFCApplicationView.cpp">
+    <ClCompile Include="MFCOpenGLAppView.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="FileView.cpp">
@@ -100,16 +100,16 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="MFCApplication.reg" />
+    <None Include="MFCOpenGLApp.reg" />
     <None Include="res\ribbon.mfcribbon-ms">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="res\MFCApplication.rc2">
+    <None Include="res\MFCOpenGLApp.rc2">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="MFCApplication.rc">
+    <ResourceCompile Include="MFCOpenGLApp.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
   </ItemGroup>
@@ -213,10 +213,10 @@
     <Image Include="res\writesmall.bmp">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="res\MFCApplicationDoc.ico">
+    <Image Include="res\MFCOpenGLAppDoc.ico">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="res\MFCApplication.ico">
+    <Image Include="res\MFCOpenGLApp.ico">
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="res\Toolbar.bmp">
