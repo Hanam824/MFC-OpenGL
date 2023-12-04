@@ -30,3 +30,29 @@
 *.exe
 *.out
 *.app
+
+#Visual studio
+*.VC.db
+*.VC.opendb
+*.ipch
+*.suo
+*.aps
+
+#Visual studio build
+*.iobj
+*.ipdb
+*.ilk
+*.pdb
+
+# temp files
+*.tlog
+*.log
+*.pch
+*.lastbuildstate
+*.res
+*.idb
+
+
+# ignore specific folder
+.vs/
+temp/
