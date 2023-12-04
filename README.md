@@ -1,1 +1,1 @@
-# MFC_OpenGL
+# MFC-OpenGL
