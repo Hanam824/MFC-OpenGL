@@ -20,9 +20,9 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
-    <ProjectGuid>{A458834C-4DF2-4CAB-A639-37B1CA46214D}</ProjectGuid>
+    <ProjectGuid>{79B8E2FF-2F32-4A68-9924-146214CB9066}</ProjectGuid>
     <Keyword>MFCDLLProj</Keyword>
-    <RootNamespace>OpenGLBase</RootNamespace>
+    <RootNamespace>LibGUI</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -88,20 +88,23 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
+  <PropertyGroup Label="Vcpkg">
+    <VcpkgEnabled>false</VcpkgEnabled>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_WINDOWS;_DEBUG;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_WINDOWS;_DEBUG;_USRDLL;_AFXEXT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <AdditionalIncludeDirectories>../../include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
-      <ModuleDefinitionFile>.\OpenGLBase.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>.\LibGUI.def</ModuleDefinitionFile>
       <AdditionalLibraryDirectories>../../lib/$(Configuration)/$(PlatformName);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>Opengl32.lib;glew32.lib;Glu32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ImportLibrary>../../lib/$(Configuration)/$(PlatformName)/$(TargetName).lib</ImportLibrary>
     </Link>
     <Midl>
@@ -124,7 +127,7 @@
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
-      <ModuleDefinitionFile>.\OpenGLBase.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>.\LibGUI.def</ModuleDefinitionFile>
     </Link>
     <Midl>
       <MkTypLibCompatible>false</MkTypLibCompatible>
@@ -150,7 +153,7 @@
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <ModuleDefinitionFile>.\OpenGLBase.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>.\LibGUI.def</ModuleDefinitionFile>
     </Link>
     <Midl>
       <MkTypLibCompatible>false</MkTypLibCompatible>
@@ -176,7 +179,7 @@
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <ModuleDefinitionFile>.\OpenGLBase.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>.\LibGUI.def</ModuleDefinitionFile>
     </Link>
     <Midl>
       <MkTypLibCompatible>false</MkTypLibCompatible>
@@ -189,27 +192,43 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="OpenGLBase.cpp" />
+    <ClCompile Include="FBOManager.cpp" />
+    <ClCompile Include="FramebufferObject.cpp" />
+    <ClCompile Include="FrameRenderBuffer.cpp" />
+    <ClCompile Include="GLCtrlView.cpp" />
+    <ClCompile Include="LibGUI.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="RenderBuffer.cpp" />
+    <ClCompile Include="Shader.cpp" />
+    <ClCompile Include="ShaderManager.cpp" />
+    <ClCompile Include="ViewBase.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="OpenGLBase.def" />
-    <None Include="res\OpenGLBase.rc2" />
+    <None Include="LibGUI.def" />
+    <None Include="res\LibGUI.rc2" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="FBOManager.h" />
+    <ClInclude Include="FramebufferObject.h" />
+    <ClInclude Include="FrameRenderBuffer.h" />
     <ClInclude Include="framework.h" />
-    <ClInclude Include="OpenGLBase.h" />
+    <ClInclude Include="GLCtrlView.h" />
+    <ClInclude Include="LibGUI.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="RenderBuffer.h" />
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="Shader.h" />
+    <ClInclude Include="ShaderManager.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="ViewBase.h" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="OpenGLBase.rc" />
+    <ResourceCompile Include="LibGUI.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

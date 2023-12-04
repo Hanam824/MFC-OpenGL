@@ -1,9 +1,9 @@
-// OpenGLBase.cpp : Defines the initialization routines for the DLL.
+// LibGUI.cpp : Defines the initialization routines for the DLL.
 //
 
 #include "pch.h"
 #include "framework.h"
-#include "OpenGLBase.h"
+#include "LibGUI.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -33,32 +33,3 @@
 //		Please see MFC Technical Notes 33 and 58 for additional
 //		details.
 //
-
-// COpenGLBaseApp
-
-BEGIN_MESSAGE_MAP(COpenGLBaseApp, CWinApp)
-END_MESSAGE_MAP()
-
-
-// COpenGLBaseApp construction
-
-COpenGLBaseApp::COpenGLBaseApp()
-{
-	// TODO: add construction code here,
-	// Place all significant initialization in InitInstance
-}
-
-
-// The one and only COpenGLBaseApp object
-
-COpenGLBaseApp theApp;
-
-
-// COpenGLBaseApp initialization
-
-BOOL COpenGLBaseApp::InitInstance()
-{
-	CWinApp::InitInstance();
-
-	return TRUE;
-}

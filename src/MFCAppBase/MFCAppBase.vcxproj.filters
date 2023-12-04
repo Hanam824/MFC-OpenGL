@@ -13,20 +13,29 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Graphic">
+      <UniqueIdentifier>{35c228d4-9e55-4104-bcfc-20e002f0243d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BaseApp">
+      <UniqueIdentifier>{de844707-2cbb-4d6a-8d49-0e7d4dba50b5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="OpenGLBase.cpp">
+    <ClCompile Include="MFCAppBase.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="pch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="MFCViewBase.cpp">
+      <Filter>BaseApp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="OpenGLBase.def">
+    <None Include="MFCAppBase.def">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="res\OpenGLBase.rc2">
+    <None Include="res\MFCAppBase.rc2">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>
@@ -40,15 +49,18 @@
     <ClInclude Include="Resource.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="OpenGLBase.h">
+    <ClInclude Include="MFCAppBase.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="pch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="MFCViewBase.h">
+      <Filter>BaseApp</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="OpenGLBase.rc">
+    <ResourceCompile Include="MFCAppBase.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
   </ItemGroup>

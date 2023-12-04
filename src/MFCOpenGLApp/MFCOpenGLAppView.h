@@ -13,9 +13,12 @@
 //
 
 #pragma once
+#include "../MFCAppBase/MFCViewBase.h"
 
 
-class CMFCOpenGLAppView : public CView
+class CFBOManager;
+
+class CMFCOpenGLAppView : public CMFCViewBase
 {
 protected: // create from serialization only
 	CMFCOpenGLAppView() noexcept;
@@ -33,6 +36,7 @@ public:
 	virtual void OnDraw(CDC* pDC);  // overridden to draw this view
 	virtual BOOL PreCreateWindow(CREATESTRUCT& cs);
 protected:
+	virtual void OnActivateView(BOOL bActivate, CView* pActivateView, CView* pDeactiveView);
 
 // Implementation
 public:
@@ -50,6 +54,18 @@ protected:
 	afx_msg void OnRButtonUp(UINT nFlags, CPoint point);
 	afx_msg void OnContextMenu(CWnd* pWnd, CPoint point);
 	DECLARE_MESSAGE_MAP()
+
+
+// Operations
+public:
+	void GLOnDraw(BOOL bUpdateDB = FALSE);
+
+	void GLRenderScene();
+
+	void RenderScene();
+
+private:
+	CFBOManager* m_pFBOManager;
 };
 
 #ifndef _DEBUG  // debug version in MFCOpenGLAppView.cpp

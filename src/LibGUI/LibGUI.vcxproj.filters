@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="View">
+      <UniqueIdentifier>{2f93d33f-6ffa-4436-bd1f-861845d08677}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FrameBuffer">
+      <UniqueIdentifier>{27dddd02-c6dd-465b-a80e-390d9ad437a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphic">
+      <UniqueIdentifier>{daaedf3c-6cdc-4677-8ece-d714b8da9aab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphic\Shader">
+      <UniqueIdentifier>{f187e63e-c859-479e-8f58-8ce4c2f987f9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="LibGUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GLCtrlView.cpp">
+      <Filter>View</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewBase.cpp">
+      <Filter>View</Filter>
+    </ClCompile>
+    <ClCompile Include="FBOManager.cpp">
+      <Filter>FrameBuffer</Filter>
+    </ClCompile>
+    <ClCompile Include="FramebufferObject.cpp">
+      <Filter>FrameBuffer</Filter>
+    </ClCompile>
+    <ClCompile Include="FrameRenderBuffer.cpp">
+      <Filter>FrameBuffer</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderBuffer.cpp">
+      <Filter>FrameBuffer</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader.cpp">
+      <Filter>Graphic\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderManager.cpp">
+      <Filter>Graphic\Shader</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LibGUI.def">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="res\LibGUI.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="framework.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LibGUI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GLCtrlView.h">
+      <Filter>View</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewBase.h">
+      <Filter>View</Filter>
+    </ClInclude>
+    <ClInclude Include="FBOManager.h">
+      <Filter>FrameBuffer</Filter>
+    </ClInclude>
+    <ClInclude Include="FramebufferObject.h">
+      <Filter>FrameBuffer</Filter>
+    </ClInclude>
+    <ClInclude Include="FrameRenderBuffer.h">
+      <Filter>FrameBuffer</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderBuffer.h">
+      <Filter>FrameBuffer</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader.h">
+      <Filter>Graphic\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderManager.h">
+      <Filter>Graphic\Shader</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="LibGUI.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

@@ -23,16 +23,19 @@
 #include "MFCOpenGLAppDoc.h"
 #include "MFCOpenGLAppView.h"
 
+
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
 
+#include "../LibGUI/FBOManager.h"
+
 
 // CMFCOpenGLAppView
 
-IMPLEMENT_DYNCREATE(CMFCOpenGLAppView, CView)
+IMPLEMENT_DYNCREATE(CMFCOpenGLAppView, CMFCViewBase)
 
-BEGIN_MESSAGE_MAP(CMFCOpenGLAppView, CView)
+BEGIN_MESSAGE_MAP(CMFCOpenGLAppView, CMFCViewBase)
 	ON_WM_CONTEXTMENU()
 	ON_WM_RBUTTONUP()
 END_MESSAGE_MAP()
@@ -43,10 +46,16 @@ CMFCOpenGLAppView::CMFCOpenGLAppView() noexcept
 {
 	// TODO: add construction code here
 
+	m_pFBOManager = new CFBOManager;
 }
 
 CMFCOpenGLAppView::~CMFCOpenGLAppView()
 {
+	if (m_pFBOManager)
+	{
+		delete m_pFBOManager;
+		m_pFBOManager = nullptr;
+	}
 }
 
 BOOL CMFCOpenGLAppView::PreCreateWindow(CREATESTRUCT& cs)
@@ -54,7 +63,12 @@ BOOL CMFCOpenGLAppView::PreCreateWindow(CREATESTRUCT& cs)
 	// TODO: Modify the Window class or styles here by modifying
 	//  the CREATESTRUCT cs
 
-	return CView::PreCreateWindow(cs);
+	return CMFCViewBase::PreCreateWindow(cs);
+}
+
+void CMFCOpenGLAppView::OnActivateView(BOOL bActivate, CView* pActivateView, CView* pDeactiveView)
+{
+	__super::OnActivateView(bActivate, pActivateView, pDeactiveView);
 }
 
 // CMFCOpenGLAppView drawing
@@ -67,6 +81,7 @@ void CMFCOpenGLAppView::OnDraw(CDC* /*pDC*/)
 		return;
 
 	// TODO: add draw code for native data here
+	GLOnDraw(FALSE);
 }
 
 void CMFCOpenGLAppView::OnRButtonUp(UINT /* nFlags */, CPoint point)
@@ -88,12 +103,12 @@ void CMFCOpenGLAppView::OnContextMenu(CWnd* /* pWnd */, CPoint point)
 #ifdef _DEBUG
 void CMFCOpenGLAppView::AssertValid() const
 {
-	CView::AssertValid();
+	CMFCViewBase::AssertValid();
 }
 
 void CMFCOpenGLAppView::Dump(CDumpContext& dc) const
 {
-	CView::Dump(dc);
+	CMFCViewBase::Dump(dc);
 }
 
 CMFCOpenGLAppDoc* CMFCOpenGLAppView::GetDocument() const // non-debug version is inline
@@ -105,3 +120,39 @@ CMFCOpenGLAppDoc* CMFCOpenGLAppView::GetDocument() const // non-debug version is
 
 
 // CMFCOpenGLAppView message handlers
+
+void CMFCOpenGLAppView::GLOnDraw(BOOL bUpdateDB)
+{
+	auto nWidth = 300;
+	auto nHeight = 600;
+
+	WGLActivate();
+	{
+		m_pFBOManager->GLProcessFBO(nWidth, nHeight, FALSE);
+
+		GLRenderScene();
+		::SwapBuffers(m_hDC);
+	}
+	WGLDeactivate();
+}
+
+void CMFCOpenGLAppView::GLRenderScene()
+{
+	RenderScene();
+}
+
+void CMFCOpenGLAppView::RenderScene()
+{
+	// Clear the window with current clearing color
+	glClearColor(0.f, 0.f, 0.f, 1.f);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+
+	// Background
+	GLDrawBackground();
+
+	SetLight(); // for Intel GPU 
+
+	glClear(GL_DEPTH_BUFFER_BIT);
+}
