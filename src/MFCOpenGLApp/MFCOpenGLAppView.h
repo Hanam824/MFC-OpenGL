@@ -13,7 +13,7 @@
 //
 
 #pragma once
-#include "../MFCAppBase/MFCViewBase.h"
+#include "../MFCBase/MFCViewBase.h"
 
 
 class CFBOManager;

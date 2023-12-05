@@ -14,27 +14,30 @@
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
     <Filter Include="View">
-      <UniqueIdentifier>{8e44833d-b411-4d74-ba56-51d20f2d2d24}</UniqueIdentifier>
+      <UniqueIdentifier>{2f93d33f-6ffa-4436-bd1f-861845d08677}</UniqueIdentifier>
     </Filter>
     <Filter Include="FrameBuffer">
-      <UniqueIdentifier>{6d2574bc-9f5b-4b54-a656-34fe2394a014}</UniqueIdentifier>
+      <UniqueIdentifier>{27dddd02-c6dd-465b-a80e-390d9ad437a9}</UniqueIdentifier>
     </Filter>
     <Filter Include="Graphic">
-      <UniqueIdentifier>{827f1231-7d4d-4a67-9fb8-3449c68f4e33}</UniqueIdentifier>
+      <UniqueIdentifier>{daaedf3c-6cdc-4677-8ece-d714b8da9aab}</UniqueIdentifier>
     </Filter>
     <Filter Include="Graphic\Shader">
-      <UniqueIdentifier>{57b92bca-ee54-4369-aee3-9ccad7b2ba0b}</UniqueIdentifier>
+      <UniqueIdentifier>{f187e63e-c859-479e-8f58-8ce4c2f987f9}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="LibGUI.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="dllmain.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="pch.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GLCtrlView.cpp">
+      <Filter>View</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewBase.cpp">
+      <Filter>View</Filter>
     </ClCompile>
     <ClCompile Include="FBOManager.cpp">
       <Filter>FrameBuffer</Filter>
@@ -45,9 +48,6 @@
     <ClCompile Include="FrameRenderBuffer.cpp">
       <Filter>FrameBuffer</Filter>
     </ClCompile>
-    <ClCompile Include="GLCtrlView.cpp">
-      <Filter>View</Filter>
-    </ClCompile>
     <ClCompile Include="RenderBuffer.cpp">
       <Filter>FrameBuffer</Filter>
     </ClCompile>
@@ -56,9 +56,6 @@
     </ClCompile>
     <ClCompile Include="ShaderManager.cpp">
       <Filter>Graphic\Shader</Filter>
-    </ClCompile>
-    <ClCompile Include="ViewBase.cpp">
-      <Filter>View</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -79,8 +76,17 @@
     <ClInclude Include="Resource.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="LibGUI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="pch.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GLCtrlView.h">
+      <Filter>View</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewBase.h">
+      <Filter>View</Filter>
     </ClInclude>
     <ClInclude Include="FBOManager.h">
       <Filter>FrameBuffer</Filter>
@@ -91,9 +97,6 @@
     <ClInclude Include="FrameRenderBuffer.h">
       <Filter>FrameBuffer</Filter>
     </ClInclude>
-    <ClInclude Include="GLCtrlView.h">
-      <Filter>View</Filter>
-    </ClInclude>
     <ClInclude Include="RenderBuffer.h">
       <Filter>FrameBuffer</Filter>
     </ClInclude>
@@ -102,9 +105,6 @@
     </ClInclude>
     <ClInclude Include="ShaderManager.h">
       <Filter>Graphic\Shader</Filter>
-    </ClInclude>
-    <ClInclude Include="ViewBase.h">
-      <Filter>View</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
